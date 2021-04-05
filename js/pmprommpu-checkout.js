@@ -125,7 +125,7 @@ jQuery(document).ready(function () {
                     msgfield: 'discount_code_message'
                 },
                 error: function(xml){
-                    window.alert('Error applying discount code [1]');
+                    window.alert('خطا در استفاده از کد تخفیف [1]');
 
                     //enable apply button
                     main_dc_btn.removeAttr('disabled');
@@ -133,7 +133,7 @@ jQuery(document).ready(function () {
                 success: function(responseHTML){
                     if (responseHTML === 'error')
                     {
-                        window.alert('Error applying discount code [2]');
+                        window.alert('خطا در استفاده از کد تخفیف [2]');
                     }
                     else
                     {
@@ -167,7 +167,7 @@ jQuery(document).ready(function () {
         if(result.card_type) {
             card_type.val(cardtypenames[result.card_type.name]);
         } else {
-            card_type.val('Unknown Card Type');
+            card_type.val('نوع کارت ناشناخته');
         }
     });
 

@@ -48,7 +48,7 @@ global $current_user;
 	if(!$alllevels)
 		return "";
 ?>
-<h3><?php _e("Membership Levels", "pmprommpu"); ?></h3>
+<h3><?php _e("سطوح عضویت", "pmprommpu"); ?></h3>
 <?php
 	$show_membership_level = true;
 	$show_membership_level = apply_filters("pmpro_profile_show_membership_level", $show_membership_level, $user);
@@ -58,9 +58,9 @@ global $current_user;
 	<table class="wp-list-table widefat fixed pmprommpu_levels" width="100%" cellpadding="0" cellspacing="0" border="0">
 	<thead>
 		<tr>
-			<th>Group</th>
-			<th>Membership Level</th>
-			<th>Expiration</th>
+			<th>گروه</th>
+			<th>سطح عضویت</th>
+			<th>انقضاء</th>
 			<th>&nbsp;</th>
 		</tr>
 	</thead>
@@ -81,14 +81,14 @@ global $current_user;
 		<tr id="new_levels_tr_template" class="new_levels_tr">
 			<td>
 				<select class="new_levels_group" name="new_levels_group[]">
-					<option value="">-- <?php _e("Choose a Group", "pmpro");?> --</option>
+					<option value="">-- <?php _e("یک گروه را انتخاب کنید", "pmpro");?> --</option>
 					<?php foreach($allgroups as $group) { ?>
 						<option value="<?php echo $group->id;?>"><?php echo $group->name;?></option>
 					<?php } ?>
 				</select>
 			</td>
 			<td>
-				<em><?php _e('Choose a group first.', 'pmprommpu');?></em>
+				<em><?php _e('ابتدا گروه را انتخاب کنید.', 'pmprommpu');?></em>
 			</td>
 			<td>
 				<?php
@@ -99,8 +99,8 @@ global $current_user;
 					$selected_expires_year = (int)$current_year + 1;
 				?>
 				<select class="expires new_levels_expires" name="new_levels_expires[]">
-					<option value="0" <?php if(!$end_date) { ?>selected="selected"<?php } ?>><?php _e("No", "pmpro");?></option>
-					<option value="1" <?php if($end_date) { ?>selected="selected"<?php } ?>><?php _e("Yes", "pmpro");?></option>
+					<option value="0" <?php if(!$end_date) { ?>selected="selected"<?php } ?>><?php _e("خیر", "pmpro");?></option>
+					<option value="1" <?php if($end_date) { ?>selected="selected"<?php } ?>><?php _e("بله", "pmpro");?></option>
 				</select>
 				<span class="expires_date new_levels_expires_date" <?php if(!$end_date) { ?>style="display: none;"<?php } ?>>
 					on
@@ -118,7 +118,7 @@ global $current_user;
 					<input name="new_levels_expires_year[]" type="text" size="4" value="<?php echo $selected_expires_year?>" />
 				</span>
 			</td>
-			<td><a class="remove_level" href="javascript:void(0);"><?php _e('Remove', 'pmprommpu');?></a></td>
+			<td><a class="remove_level" href="javascript:void(0);"><?php _e('حذف', 'pmprommpu');?></a></td>
 		</tr>
 		<?php
 		$new_level_template_html = preg_replace('/\n\t+/', '', ob_get_contents());
@@ -171,8 +171,8 @@ global $current_user;
 							}
 							?>
 							<select class="expires" name="expires[]">
-								<option value="0" <?php if(!$end_date) { ?>selected="selected"<?php } ?>><?php _e("No", "pmpro");?></option>
-								<option value="1" <?php if($end_date) { ?>selected="selected"<?php } ?>><?php _e("Yes", "pmpro");?></option>
+								<option value="0" <?php if(!$end_date) { ?>selected="selected"<?php } ?>><?php _e("خیر", "pmpro");?></option>
+								<option value="1" <?php if($end_date) { ?>selected="selected"<?php } ?>><?php _e("بله", "pmpro");?></option>
 							</select>
 							<span class="expires_date" <?php if(!$end_date) { ?>style="display: none;"<?php } ?>>
 								on
@@ -190,13 +190,13 @@ global $current_user;
 								<input name="expires_year[]" type="text" size="4" value="<?php echo $selected_expires_year?>" />
 							</span>
 						</td>
-						<td width="25%"><a class="remove_level" href="javascript:void(0);"><?php _e('Remove', 'pmprommpu');?></a></td>
+						<td width="25%"><a class="remove_level" href="javascript:void(0);"><?php _e('حذف', 'pmprommpu');?></a></td>
 					</tr>
 					<tr class="old_levels_delsettings_tr_template remove_level">
 						<td></td>
 						<td colspan="3">
-							<label for="send_admin_change_email"><input value="1" id="send_admin_change_email" name="send_admin_change_email[]" type="checkbox"> Send the user an email about this change.</label><br>
-			                <label for="cancel_subscription"><input value="1" id="cancel_subscription" name="cancel_subscription[]" type="checkbox"> Cancel this user's subscription at the gateway.</label>
+							<label for="send_admin_change_email"><input value="1" id="send_admin_change_email" name="send_admin_change_email[]" type="checkbox"> ارسال یک ایمیل در مورد این تغییر.</label><br>
+			                <label for="cancel_subscription"><input value="1" id="cancel_subscription" name="cancel_subscription[]" type="checkbox"> لغو اشتراک کاربر در درگاه پرداخت.</label>
 						</td>
 					</tr>
 					<?php
@@ -206,7 +206,7 @@ global $current_user;
 		}
 	?>
 	<tr>
-		<td colspan="4"><a href="javascript:void(0);" class="add_level">+ <?php _e('Add Level', 'pmprommpu');?></a></td>
+		<td colspan="4"><a href="javascript:void(0);" class="add_level">+ <?php _e('افزودن سطح', 'pmprommpu');?></a></td>
 	</tr>
 	</tbody>
 	</table>
@@ -237,7 +237,7 @@ global $current_user;
 					levelselect.append('<option value="'+alllevels[levelsandgroups[group_id][item]].id+'">'+alllevels[levelsandgroups[group_id][item]].name+'</option>');
 				}
 			} else {
-				leveltd.html('<em>' + <?php echo json_encode(__('Choose a group first.', 'pmprommpu'));?> + '</em>');
+				leveltd.html('<em>' + <?php echo json_encode(__('ابتدا یک گروه را انتخاب کنید.', 'pmprommpu'));?> + '</em>');
 			}
 		}
 
@@ -251,13 +251,13 @@ global $current_user;
 				removetr.remove();
 			} else if(removetr.hasClass('remove_level')) {
 				removetr.removeClass('remove_level');
-				removelink.html(<?php echo json_encode(__('Remove', 'pmprommpu'));?>);
+				removelink.html(<?php echo json_encode(__('حذف', 'pmprommpu'));?>);
 				removelink.next('input').remove();
 				removetr.nextAll('.old_levels_delsettings_tr_template').first().remove();
 			} else {
 				//existing level? red it out and add to be removed
 				removetr.addClass('remove_level');
-				removelink.html(<?php echo json_encode(__('Undo', 'pmprommpu'));?>);
+				removelink.html(<?php echo json_encode(__('بازیابی', 'pmprommpu'));?>);
 				var olevelid = removelink.closest('tr').find('input.membership_level_id').val();
 				jQuery('<input type="hidden" name="remove_levels_id[]" value="'+olevelid+'">').insertAfter(removelink);
 				removetr.after(delsettingsrow.clone());

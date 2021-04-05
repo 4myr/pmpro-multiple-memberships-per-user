@@ -54,9 +54,9 @@ if ( $pmpro_msg ) {
 				<p class="pmpro_mmpu_group-type">
 					<?php
 					if ( intval( $pmpro_groups[ $group ]->allow_multiple_selections ) > 0 ) {
-						_e( 'You can choose multiple levels from this group.', 'pmpro-multiple-memberships-per-user' );
+						_e( 'شما می توانید سطوح مختلف را از این گروه انتخاب کنید.', 'pmpro-multiple-memberships-per-user' );
 					} else {
-						_e( 'You can only choose one level from this group.', 'pmpro-multiple-memberships-per-user' );
+						_e( 'شما فقط می توانید یک سطح از این گروه را انتخاب کنید.', 'pmpro-multiple-memberships-per-user' );
 					}
 					?>
 				</p>
@@ -74,7 +74,7 @@ if ( $pmpro_msg ) {
 							<p class="pmpro_level-price">
 								<?php
 								if ( pmpro_isLevelFree( $pmpro_levels[ $level ] ) ) {
-									_e( "Free", "paid-memberships-pro" );
+									_e( "رایگان", "paid-memberships-pro" );
 								} else {
 									echo pmpro_getLevelCost( $pmpro_levels[ $level ], true, true );
 								}
@@ -101,7 +101,7 @@ if ( $pmpro_msg ) {
 										echo __( "pmpro_level-select-current", "pmpro-multiple-memberships-per-user" );
 									} ?>" for="level-<?php echo $pmpro_levels[ $level ]->id ?>"><input type="checkbox"
 								                                                                       id="level-<?php echo $pmpro_levels[ $level ]->id ?>"
-								                                                                       data-groupid="<?php echo $group ?>" <?php checked( pmpro_hasMembershipLevel( $pmpro_levels[ $level ]->id ), true ); ?>>&nbsp;&nbsp;<?php _e( 'Add', 'pmpro-multiple-memberships-per-user' ); ?>
+								                                                                       data-groupid="<?php echo $group ?>" <?php checked( pmpro_hasMembershipLevel( $pmpro_levels[ $level ]->id ), true ); ?>>&nbsp;&nbsp;<?php _e( 'افزودن', 'pmpro-multiple-memberships-per-user' ); ?>
 								</label>
 								<?php
 							} else {
@@ -112,7 +112,7 @@ if ( $pmpro_msg ) {
 										echo __( "pmpro_level-select-current", "pmpro-multiple-memberships-per-user" );
 									} ?>" for="level-<?php echo $pmpro_levels[ $level ]->id ?>"><input type="checkbox"
 								                                                                       id="level-<?php echo $pmpro_levels[ $level ]->id ?>"
-								                                                                       data-groupid="<?php echo $group; ?>" <?php checked( pmpro_hasMembershipLevel( $pmpro_levels[ $level ]->id ), true ); ?>>&nbsp;&nbsp;<?php _e( 'Select', 'pmpro-multiple-memberships-per-user' ); ?>
+								                                                                       data-groupid="<?php echo $group; ?>" <?php checked( pmpro_hasMembershipLevel( $pmpro_levels[ $level ]->id ), true ); ?>>&nbsp;&nbsp;<?php _e( 'انتخاب', 'pmpro-multiple-memberships-per-user' ); ?>
 								</label>
 								<?php
 							}
@@ -131,7 +131,7 @@ if ( $pmpro_msg ) {
 			<div class="pmpro_mmpu_level">
 				<div class="pmpro_level-info"></div> <!-- end pmpro_level-info -->
 				<div class="pmpro_level-action">
-					<input class="pmpro_mmpu_checkout-button" type="button" value="Checkout" disabled="disabled">
+					<input class="pmpro_mmpu_checkout-button" type="button" value="تکمیل" disabled="disabled">
 				</div> <!-- end pmpro_level-action -->
 			</div> <!-- end pmpro_mmpu_level -->
 		</div> <!-- end pmpro_mmpu_checkout -->
@@ -139,8 +139,8 @@ if ( $pmpro_msg ) {
 	</div> <!-- end pmpro_mmpu_groups -->
 	<div id="pmpro_mmpu_level_selections">
 		<aside class="widget">
-			<h3 class="widget-title"><?php _e( 'Membership Selections', 'pmpro-multiple-memberships-per-user' ); ?></h3>
-			<div id="pmpro_mmpu_level_summary"><?php _e( 'Select levels to complete checkout.', 'pmpro-multiple-memberships-per-user' ); ?></div>
+			<h3 class="widget-title"><?php _e( 'سطوح انتخابی', 'pmpro-multiple-memberships-per-user' ); ?></h3>
+			<div id="pmpro_mmpu_level_summary"><?php _e( 'سطوح را برای تکمیل پرداخت انتخاب کنید.', 'pmpro-multiple-memberships-per-user' ); ?></div>
 			<p><input class="pmpro_mmpu_checkout-button" type="button" value="Checkout" disabled="disabled"></p>
 		</aside>
 	</div> <!-- end pmpro_mmpu_level_selections -->
@@ -148,9 +148,9 @@ if ( $pmpro_msg ) {
 <nav id="nav-below" class="navigation" role="navigation">
 	<div class="nav-previous alignleft">
 		<?php if ( ! empty( $current_user->membership_level->id ) ) { ?>
-			<a href="<?php echo pmpro_url( "account" ) ?>"><?php _e( '&larr; Return to Your Account', 'paid-memberships-pro' ); ?></a>
+			<a href="<?php echo pmpro_url( "account" ) ?>"><?php _e( '&larr; بازگشت به حساب کاربری شما', 'paid-memberships-pro' ); ?></a>
 		<?php } else { ?>
-			<a href="<?php echo home_url() ?>"><?php _e( '&larr; Return to Home', 'paid-memberships-pro' ); ?></a>
+			<a href="<?php echo home_url() ?>"><?php _e( '&larr; بازگشت به صفحه اصلی', 'paid-memberships-pro' ); ?></a>
 		<?php } ?>
 	</div>
 </nav>

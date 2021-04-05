@@ -64,21 +64,21 @@
 	?>
 
 	<?php if ( ! empty( $pmpro_review ) ) {  ?>
- 	 	<p><?php _e('Almost done. Review the membership information and pricing below then <strong>click the "Complete Payment" button</strong> to finish your order.', 'paid-memberships-pro');?></p>
+ 	 	<p><?php _e('قبل از تکمیل سفارش اطلاعات عضویت و قیمت را با <strong>کلیک روی "تکمیل پرداخت"</strong> بررسی کنید.', 'paid-memberships-pro');?></p>
 	<?php } ?>
 
 	<div id="pmpro_pricing_fields" class="pmpro_checkout">
 		<h3>
 			<?php if ( ! empty( $pmpro_checkout_level_ids ) && count( $pmpro_checkout_level_ids ) > 1 ) { ?>
-				<span class="pmpro_checkout-h3-name"><?php _e('Membership Levels', 'pmpro-multiple-memberships-per-user');?></span>
+				<span class="pmpro_checkout-h3-name"><?php _e('سطوح عضویت', 'pmpro-multiple-memberships-per-user');?></span>
 			<?php } else { ?>
-				<span class="pmpro_checkout-h3-name"><?php _e('Membership Level', 'paid-memberships-pro');?></span>
+				<span class="pmpro_checkout-h3-name"><?php _e('سطح عضویت', 'paid-memberships-pro');?></span>
 			<?php } ?>
-			<?php if ( ! empty( $pmpro_levels ) && count( $pmpro_levels ) > 1 ) { ?><span class="pmpro_checkout-h3-msg"><a href="<?php echo pmpro_url("levels"); ?>"><?php _e('change', 'paid-memberships-pro');?></a></span><?php } ?>
+			<?php if ( ! empty( $pmpro_levels ) && count( $pmpro_levels ) > 1 ) { ?><span class="pmpro_checkout-h3-msg"><a href="<?php echo pmpro_url("levels"); ?>"><?php _e('ویرایش', 'paid-memberships-pro');?></a></span><?php } ?>
 		</h3>
 		<div class="pmpro_checkout-fields">
 			<?php 
-				$defaultstring = "<p>".sprintf(__('You have selected the <strong>%s</strong> membership level.', 'paid-memberships-pro'), $pmpro_level->name)."</p>";
+				$defaultstring = "<p>".sprintf(__('شما سطح عضویت <strong>%s</strong> را انتخاب کرده اید.', 'paid-memberships-pro'), $pmpro_level->name)."</p>";
 				if( ! empty( $pmpro_checkout_level_ids ) && count( $pmpro_checkout_level_ids ) < 2 && !empty($pmpro_level->description)) {
 					$defaultstring .= apply_filters("the_content", stripslashes($pmpro_level->description));
 				}
@@ -86,7 +86,7 @@
 			?>
 			<div id="pmpro_level_cost">
 				<?php if ( ! empty( $discount_code ) && pmpro_checkDiscountCode( $discount_code ) ) { ?>
-					<?php printf(__('<p class="pmpro_level_discount_applied">The <strong>%s</strong> code has been applied to your order.</p>', 'paid-memberships-pro'), $discount_code);?>
+					<?php printf(__('<p class="pmpro_level_discount_applied">کد تخفیف <strong>%s</strong> روی سفارش شما اعمال شد.</p>', 'paid-memberships-pro'), $discount_code);?>
 				<?php } ?>
 				<?php 
 					if ( count( $pmpro_checkout_levels ) > 1 ) {
@@ -104,20 +104,20 @@
 			<?php if ( ! empty( $pmpro_show_discount_code ) ) { ?>
 
 				<?php if($discount_code && !$pmpro_review) { ?>
-					<p id="other_discount_code_p" class="pmpro_small"><a id="other_discount_code_a" href="#discount_code"><?php _e('Click here to change your discount code', 'paid-memberships-pro');?></a>.</p>
+					<p id="other_discount_code_p" class="pmpro_small"><a id="other_discount_code_a" href="#discount_code"><?php _e('برای تغییر کد تخفیف خود اینجا کلیک کنید', 'paid-memberships-pro');?></a>.</p>
 				<?php } elseif(!$pmpro_review) { ?>
-					<p id="other_discount_code_p" class="pmpro_small"><?php _e('Do you have a discount code?', 'pmpro');?> <a id="other_discount_code_a" href="#discount_code"><?php _e('Click here to enter your discount code', 'paid-memberships-pro');?></a>.</p>
+					<p id="other_discount_code_p" class="pmpro_small"><?php _e('Do you have a discount code?', 'pmpro');?> <a id="other_discount_code_a" href="#discount_code"><?php _e('برای وارد کردن کد تخفیف اینجا کلیک کنید', 'paid-memberships-pro');?></a>.</p>
 				<?php } elseif($pmpro_review && $discount_code) { ?>
-					<p><strong><?php _e('Discount Code', 'paid-memberships-pro');?>:</strong> <?php echo $discount_code?></p>
+					<p><strong><?php _e('کد تخفیف', 'paid-memberships-pro');?>:</strong> <?php echo $discount_code?></p>
 				<?php } ?>
 
 			<?php } ?>
 
 			<?php if ( ! empty( $pmpro_show_discount_code ) ) { ?>
 			<div id="other_discount_code_tr" style="display: none;">
-				<label for="other_discount_code"><?php _e('Discount Code', 'paid-memberships-pro');?></label>
+				<label for="other_discount_code"><?php _e('کد تخفیف', 'paid-memberships-pro');?></label>
 				<input id="other_discount_code" name="other_discount_code" type="text" class="input <?php echo pmpro_getClassForField("other_discount_code");?>" size="20" value="<?php echo esc_attr($discount_code)?>" />
-				<input type="button" name="other_discount_code_button" id="other_discount_code_button" value="<?php _e('Apply', 'paid-memberships-pro');?>" />
+				<input type="button" name="other_discount_code_button" id="other_discount_code_button" value="<?php _e('اعمال', 'paid-memberships-pro');?>" />
 			</div>
 			<?php } ?>
 		</div> <!-- end pmpro_checkout-fields -->
@@ -139,12 +139,12 @@
 	<div id="pmpro_user_fields" class="pmpro_checkout">
 		<hr />
 		<h3>
-			<span class="pmpro_checkout-h3-name"><?php _e('Account Information', 'paid-memberships-pro');?></span>
-			<span class="pmpro_checkout-h3-msg"><?php _e('Already have an account?', 'paid-memberships-pro');?> <a href="<?php echo wp_login_url(pmpro_url("checkout", "?level=" . $checkout_levels))?>"><?php _e('Log in here', 'paid-memberships-pro');?></a></span>
+			<span class="pmpro_checkout-h3-name"><?php _e('اطلاعات حساب', 'paid-memberships-pro');?></span>
+			<span class="pmpro_checkout-h3-msg"><?php _e('در حال حاضر یک حساب کاربری دارید?', 'paid-memberships-pro');?> <a href="<?php echo wp_login_url(pmpro_url("checkout", "?level=" . $checkout_levels))?>"><?php _e('از اینجا وارد شوید', 'paid-memberships-pro');?></a></span>
 		</h3>
 		<div class="pmpro_checkout-fields">
 			<div class="pmpro_checkout-field pmpro_checkout-field-username">
-				<label for="username"><?php _e('Username', 'paid-memberships-pro');?></label>
+				<label for="username"><?php _e('نام کاربری', 'paid-memberships-pro');?></label>
 				<input id="username" name="username" type="text" class="input <?php echo pmpro_getClassForField("username");?>" size="30" value="<?php echo esc_attr($username)?>" />
 			</div> <!-- end pmpro_checkout-field-username -->
 
@@ -153,7 +153,7 @@
 			?>
 
 			<div class="pmpro_checkout-field pmpro_checkout-field-password">
-				<label for="password"><?php _e('Password', 'paid-memberships-pro');?></label>
+				<label for="password"><?php _e('کلمه عبور', 'paid-memberships-pro');?></label>
 				<input id="password" name="password" type="password" class="input <?php echo pmpro_getClassForField("password");?>" size="30" value="<?php echo esc_attr($password)?>" />
 			</div> <!-- end pmpro_checkout-field-password -->
 			
@@ -163,7 +163,7 @@
 				{
 				?>
 				<div class="pmpro_checkout-field pmpro_checkout-field-password2">
-					<label for="password2"><?php _e('Confirm Password', 'paid-memberships-pro');?></label>
+					<label for="password2"><?php _e('تایید رمز عبور', 'paid-memberships-pro');?></label>
 					<input id="password2" name="password2" type="password" class="input <?php echo pmpro_getClassForField("password2");?>" size="30" value="<?php echo esc_attr($password2)?>" />
 				</div> <!-- end pmpro_checkout-field-password2 -->
 				<?php
@@ -181,7 +181,7 @@
 			?>
 
 			<div class="pmpro_checkout-field pmpro_checkout-field-bemail">
-				<label for="bemail"><?php _e('E-mail Address', 'paid-memberships-pro');?></label>
+				<label for="bemail"><?php _e('آدرس ایمیل', 'paid-memberships-pro');?></label>
 				<input id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="input <?php echo pmpro_getClassForField("bemail");?>" size="30" value="<?php echo esc_attr($bemail)?>" />
 			</div> <!-- end pmpro_checkout-field-bemail -->
 
@@ -191,7 +191,7 @@
 				{
 				?>
 				<div class="pmpro_checkout-field pmpro_checkout-field-bconfirmemail">
-					<label for="bconfirmemail"><?php _e('Confirm E-mail Address', 'paid-memberships-pro');?></label>
+					<label for="bconfirmemail"><?php _e('تأیید آدرس ایمیل', 'paid-memberships-pro');?></label>
 					<input id="bconfirmemail" name="bconfirmemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="input <?php echo pmpro_getClassForField("bconfirmemail");?>" size="30" value="<?php echo esc_attr($bconfirmemail)?>" />
 				</div> <!-- end pmpro_checkout-field-bconfirmemail -->
 				<?php
@@ -209,8 +209,8 @@
 			?>
 
 			<div class="pmpro_hidden">
-				<label for="fullname"><?php _e('Full Name', 'paid-memberships-pro');?></label>
-				<input id="fullname" name="fullname" type="text" class="input <?php echo pmpro_getClassForField("fullname");?>" size="30" value="" /> <strong><?php _e('LEAVE THIS BLANK', 'paid-memberships-pro');?></strong>
+				<label for="fullname"><?php _e('نام و نام خانوادگی', 'paid-memberships-pro');?></label>
+				<input id="fullname" name="fullname" type="text" class="input <?php echo pmpro_getClassForField("fullname");?>" size="30" value="" /> <strong><?php _e('خالی بگذارید', 'paid-memberships-pro');?></strong>
 			</div> <!-- end pmpro_hidden -->
 
 			<div class="pmpro_checkout-field pmpro_captcha">
@@ -230,7 +230,7 @@
 	</div> <!-- end pmpro_user_fields -->
 	<?php } elseif($current_user->ID && !$pmpro_review) { ?>
 		<div id="pmpro_account_loggedin" class="pmpro_message pmpro_alert">
-			<?php printf(__('You are logged in as <strong>%s</strong>. If you would like to use a different account for this membership, <a href="%s">log out now</a>.', 'paid-memberships-pro'), $current_user->user_login, wp_logout_url($_SERVER['REQUEST_URI'])); ?>
+			<?php printf(__('شما با عنوان <strong>%s</strong> وارد شده اید. اگر می خواهید از یک حساب کاربری دیگر برای این عضویت استفاده کنید, <a href="%s">خارج شوید</a>.', 'paid-memberships-pro'), $current_user->user_login, wp_logout_url($_SERVER['REQUEST_URI'])); ?>
 		</div> <!-- end pmpro_account_loggedin -->
 	<?php } ?>
 
@@ -246,16 +246,16 @@
 		<div id="pmpro_payment_method" class="pmpro_checkout" <?php if(!$pmpro_requirebilling) { ?>style="display: none;"<?php } ?>>
 			<hr />
 			<h3>
-				<span class="pmpro_checkout-h3-name"><?php _e('Choose your Payment Method', 'paid-memberships-pro');?></span>
+				<span class="pmpro_checkout-h3-name"><?php _e('روش پرداخت خود را انتخاب کنید', 'paid-memberships-pro');?></span>
 			</h3>
 			<div class="pmpro_checkout-fields">
 				<span class="gateway_paypal">
 					<input type="radio" name="gateway" value="paypal" <?php if(!$gateway || $gateway == "paypal") { ?>checked="checked"<?php } ?> />
-					<a href="javascript:void(0);" class="pmpro_radio"><?php _e('Check Out with a Credit Card Here', 'paid-memberships-pro');?></a>
+					<a href="javascript:void(0);" class="pmpro_radio"><?php _e('با کارت اعتباری پرداخت کنید', 'paid-memberships-pro');?></a>
 				</span>
 				<span class="gateway_paypalexpress">
 					<input type="radio" name="gateway" value="paypalexpress" <?php if($gateway == "paypalexpress") { ?>checked="checked"<?php } ?> />
-					<a href="javascript:void(0);" class="pmpro_radio"><?php _e('Check Out with PayPal', 'paid-memberships-pro');?></a>
+					<a href="javascript:void(0);" class="pmpro_radio"><?php _e('با پی پال پرداخت کنید', 'paid-memberships-pro');?></a>
 				</span>
 			</div> <!-- end pmpro_checkout-fields -->
 		</div> <!-- end pmpro_payment_method -->
@@ -273,19 +273,19 @@
 		</h3>
 		<div class="pmpro_checkout-fields">
 			<div class="pmpro_checkout-field pmpro_checkout-field-bfirstname">
-				<label for="bfirstname"><?php _e('First Name', 'paid-memberships-pro');?></label>
+				<label for="bfirstname"><?php _e('نام', 'paid-memberships-pro');?></label>
 				<input id="bfirstname" name="bfirstname" type="text" class="input <?php echo pmpro_getClassForField("bfirstname");?>" size="30" value="<?php echo esc_attr($bfirstname)?>" />
 			</div> <!-- end pmpro_checkout-field-bfirstname -->
 			<div class="pmpro_checkout-field pmpro_checkout-field-blastname">
-				<label for="blastname"><?php _e('Last Name', 'paid-memberships-pro');?></label>
+				<label for="blastname"><?php _e('نام خانوادگی', 'paid-memberships-pro');?></label>
 				<input id="blastname" name="blastname" type="text" class="input <?php echo pmpro_getClassForField("blastname");?>" size="30" value="<?php echo esc_attr($blastname)?>" />
 			</div> <!-- end pmpro_checkout-field-blastname -->
 			<div class="pmpro_checkout-field pmpro_checkout-field-baddress1">
-				<label for="baddress1"><?php _e('Address 1', 'paid-memberships-pro');?></label>
+				<label for="baddress1"><?php _e('آدرس 1', 'paid-memberships-pro');?></label>
 				<input id="baddress1" name="baddress1" type="text" class="input <?php echo pmpro_getClassForField("baddress1");?>" size="30" value="<?php echo esc_attr($baddress1)?>" />
 			</div> <!-- end pmpro_checkout-field-baddress1 -->
 			<div class="pmpro_checkout-field pmpro_checkout-field-baddress2">
-				<label for="baddress2"><?php _e('Address 2', 'paid-memberships-pro');?></label>
+				<label for="baddress2"><?php _e('آدرس 2', 'paid-memberships-pro');?></label>
 				<input id="baddress2" name="baddress2" type="text" class="input <?php echo pmpro_getClassForField("baddress2");?>" size="30" value="<?php echo esc_attr($baddress2)?>" />
 			</div> <!-- end pmpro_checkout-field-baddress2 -->
 			<?php
@@ -294,15 +294,15 @@
 				{
 			?>
 				<div class="pmpro_checkout-field pmpro_checkout-field-bcity">
-					<label for="bcity"><?php _e('City', 'paid-memberships-pro');?></label>
+					<label for="bcity"><?php _e('شهر', 'paid-memberships-pro');?></label>
 					<input id="bcity" name="bcity" type="text" class="input <?php echo pmpro_getClassForField("bcity");?>" size="30" value="<?php echo esc_attr($bcity)?>" />
 				</div> <!-- end pmpro_checkout-field-bcity -->
 				<div class="pmpro_checkout-field pmpro_checkout-field-bstate">
-					<label for="bstate"><?php _e('State', 'paid-memberships-pro');?></label>
+					<label for="bstate"><?php _e('استان', 'paid-memberships-pro');?></label>
 					<input id="bstate" name="bstate" type="text" class="input <?php echo pmpro_getClassForField("bstate");?>" size="30" value="<?php echo esc_attr($bstate)?>" />
 				</div> <!-- end pmpro_checkout-field-bstate -->
 				<div class="pmpro_checkout-field pmpro_checkout-field-bzipcode">
-					<label for="bzipcode"><?php _e('Postal Code', 'paid-memberships-pro');?></label>
+					<label for="bzipcode"><?php _e('کد پستی', 'paid-memberships-pro');?></label>
 					<input id="bzipcode" name="bzipcode" type="text" class="input <?php echo pmpro_getClassForField("bzipcode");?>" size="30" value="<?php echo esc_attr($bzipcode)?>" />
 				</div> <!-- end pmpro_checkout-field-bzipcode -->
 			<?php
@@ -311,7 +311,7 @@
 				{
 				?>
 				<div class="pmpro_checkout-field pmpro_checkout-field-bcity_state_zip">
-					<label for="bcity_state_zip"><?php _e('City, State Zip', 'paid-memberships-pro');?></label>
+					<label for="bcity_state_zip"><?php _e('کد شهر', 'paid-memberships-pro');?></label>
 					<input id="bcity" name="bcity" type="text" class="input <?php echo pmpro_getClassForField("bcity");?>" size="14" value="<?php echo esc_attr($bcity)?>" />,
 					<?php
 						$state_dropdowns = apply_filters("pmpro_state_dropdowns", false);
@@ -389,7 +389,7 @@
 				}
 			?>
 			<div class="pmpro_checkout-field pmpro_checkout-field-bphone">
-				<label for="bphone"><?php _e('Phone', 'paid-memberships-pro');?></label>
+				<label for="bphone"><?php _e('شماره تماس', 'paid-memberships-pro');?></label>
 				<input id="bphone" name="bphone" type="text" class="input <?php echo pmpro_getClassForField("bphone");?>" size="30" value="<?php echo esc_attr(formatPhone($bphone))?>" />
 			</div> <!-- end pmpro_checkout-field-bphone -->
 			<?php if($skip_account_fields) { ?>
@@ -403,7 +403,7 @@
 				}
 			?>
 			<div class="pmpro_checkout-field pmpro_checkout-field-bemail">
-				<label for="bemail"><?php _e('E-mail Address', 'paid-memberships-pro');?></label>
+				<label for="bemail"><?php _e('آدرس ایمیل', 'paid-memberships-pro');?></label>
 				<input id="bemail" name="bemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="input <?php echo pmpro_getClassForField("bemail");?>" size="30" value="<?php echo esc_attr($bemail)?>" />
 			</div> <!-- end pmpro_checkout-field-bemail -->
 			<?php
@@ -412,7 +412,7 @@
 				{
 				?>
 				<div class="pmpro_checkout-field pmpro_checkout-field-bconfirmemail">
-					<label for="bconfirmemail"><?php _e('Confirm E-mail', 'paid-memberships-pro');?></label>
+					<label for="bconfirmemail"><?php _e('تایید ایمیل', 'paid-memberships-pro');?></label>
 					<input id="bconfirmemail" name="bconfirmemail" type="<?php echo ($pmpro_email_field_type ? 'email' : 'text'); ?>" class="input <?php echo pmpro_getClassForField("bconfirmemail");?>" size="30" value="<?php echo esc_attr($bconfirmemail)?>" />
 				</div> <!-- end pmpro_checkout-field-bconfirmemail -->
 				<?php
@@ -444,8 +444,8 @@
 		?>
 		<div id="pmpro_payment_information_fields" class="pmpro_checkout" <?php if(!$pmpro_requirebilling || apply_filters("pmpro_hide_payment_information_fields", false) ) { ?>style="display: none;"<?php } ?>>
 			<h3>
-				<span class="pmpro_checkout-h3-name"><?php _e('Payment Information', 'paid-memberships-pro');?></span>
-				<span class="pmpro_checkout-h3-msg"><?php printf(__('We Accept %s', 'paid-memberships-pro'), $pmpro_accepted_credit_cards_string);?></span>
+				<span class="pmpro_checkout-h3-name"><?php _e('اطلاعات پرداخت', 'paid-memberships-pro');?></span>
+				<span class="pmpro_checkout-h3-msg"><?php printf(__('ما %s می پذیریم', 'paid-memberships-pro'), $pmpro_accepted_credit_cards_string);?></span>
 			</h3>
 			<?php $sslseal = pmpro_getOption("sslseal"); ?>
 			<?php if(!empty($sslseal)) { ?>
@@ -457,7 +457,7 @@
 				if ( ! empty( $pmpro_include_cardtype_field ) ) {
 				?>
 				<div class="pmpro_checkout-field pmpro_payment-card-type">
-					<label for="CardType"><?php _e('Card Type', 'paid-memberships-pro');?></label>
+					<label for="CardType"><?php _e('نوع کارت', 'paid-memberships-pro');?></label>
 					<select id="CardType" name="CardType" class=" <?php echo pmpro_getClassForField("CardType");?>">
 						<?php foreach($pmpro_accepted_credit_cards as $cc) { ?>
 							<option value="<?php echo $cc?>" <?php if($CardType == $cc) { ?>selected="selected"<?php } ?>><?php echo $cc?></option>
@@ -475,11 +475,11 @@
 					}
 				?>
 				<div class="pmpro_checkout-field pmpro_payment-account-number">
-					<label for="AccountNumber"><?php _e('Card Number', 'paid-memberships-pro');?></label>
+					<label for="AccountNumber"><?php _e('شماره کارت', 'paid-memberships-pro');?></label>
 					<input id="AccountNumber" name="AccountNumber" class="input <?php echo pmpro_getClassForField("AccountNumber");?>" type="text" size="25" value="<?php echo esc_attr($AccountNumber)?>" data-encrypted-name="number" autocomplete="off" />
 				</div> <!-- end pmpro_payment-account-number -->
 				<div class="pmpro_checkout-field pmpro_payment-expiration">
-					<label for="ExpirationMonth"><?php _e('Expiration Date', 'paid-memberships-pro');?></label>
+					<label for="ExpirationMonth"><?php _e('تاریخ انقضا', 'paid-memberships-pro');?></label>
 					<select id="ExpirationMonth" name="ExpirationMonth" class=" <?php echo pmpro_getClassForField("ExpirationMonth");?>">
 						<option value="01" <?php if($ExpirationMonth == "01") { ?>selected="selected"<?php } ?>>01</option>
 						<option value="02" <?php if($ExpirationMonth == "02") { ?>selected="selected"<?php } ?>>02</option>
@@ -509,15 +509,15 @@
 					if ( ! empty( $pmpro_show_cvv ) ) { ?>
 				<div class="pmpro_checkout-field pmpro_payment-cvv">
 					<label for="CVV"><?php _e('CVV', 'paid-memberships-pro');?></label>
-					<input class="input" id="CVV" name="CVV" type="text" size="4" value="<?php if(!empty($_REQUEST['CVV'])) { echo esc_attr($_REQUEST['CVV']); }?>" class=" <?php echo pmpro_getClassForField("CVV");?>" />  <small>(<a href="javascript:void(0);" onclick="javascript:window.open('<?php echo pmpro_https_filter(PMPRO_URL)?>/pages/popup-cvv.html','cvv','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=475');"><?php _e("what's this?", 'paid-memberships-pro');?></a>)</small>
+					<input class="input" id="CVV" name="CVV" type="text" size="4" value="<?php if(!empty($_REQUEST['CVV'])) { echo esc_attr($_REQUEST['CVV']); }?>" class=" <?php echo pmpro_getClassForField("CVV");?>" />  <small>(<a href="javascript:void(0);" onclick="javascript:window.open('<?php echo pmpro_https_filter(PMPRO_URL)?>/pages/popup-cvv.html','cvv','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=600, height=475');"><?php _e("این چیه?", 'paid-memberships-pro');?></a>)</small>
 				</div> <!-- end pmpro_payment-cvv -->
 				<?php } ?>
 
 				<?php if ( ! empty( $pmpro_show_discount_code ) ) { ?>
 				<div class="pmpro_checkout-field pmpro_payment-discount-code">
-					<label for="discount_code"><?php _e('Discount Code', 'paid-memberships-pro');?></label>
+					<label for="discount_code"><?php _e('کد تخفیف', 'paid-memberships-pro');?></label>
 					<input class="input <?php echo pmpro_getClassForField("discount_code");?>" id="discount_code" name="discount_code" type="text" size="20" value="<?php echo esc_attr($discount_code)?>" />
-					<input type="button" id="discount_code_button" name="discount_code_button" value="<?php _e('Apply', 'paid-memberships-pro');?>" />
+					<input type="button" id="discount_code_button" name="discount_code_button" value="<?php _e('اعمال', 'paid-memberships-pro');?>" />
 					<p id="discount_code_message" class="pmpro_message" style="display: none;"></p>
 				</div> <!-- end pmpro_payment-discount-code -->
 			<?php } ?>
@@ -553,7 +553,7 @@
 						$tos = "";
 					}
 				?>
-				<input type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="pmpro_label-inline pmpro_clickable" for="tos"><?php printf(__('I agree to the %s', 'paid-memberships-pro'), $tospage->post_title);?></label>
+				<input type="checkbox" name="tos" value="1" id="tos" <?php checked( 1, $tos ); ?> /> <label class="pmpro_label-inline pmpro_clickable" for="tos"><?php printf(__('من با %s موافقم', 'paid-memberships-pro'), $tospage->post_title);?></label>
 			</div> <!-- end pmpro_checkout-fields -->
 		</div> <!-- end pmpro_tos_fields -->
 		<?php
@@ -578,7 +578,7 @@
 				<input type="hidden" name="confirm" value="1" />
 				<input type="hidden" name="token" value="<?php echo esc_attr($pmpro_paypal_token)?>" />
 				<input type="hidden" name="gateway" value="<?php echo esc_attr($gateway); ?>" />
-				<input type="submit" class="pmpro_btn pmpro_btn-submit-checkout" value="<?php _e('Complete Payment', 'paid-memberships-pro');?> &raquo;" />
+				<input type="submit" class="pmpro_btn pmpro_btn-submit-checkout" value="<?php _e('تکمیل پرداخت', 'paid-memberships-pro');?> &raquo;" />
 			</span>
 
 		<?php } else { ?>
@@ -590,7 +590,7 @@
 				?>
 				<span id="pmpro_submit_span">
 					<input type="hidden" name="submit-checkout" value="1" />
-					<input type="submit" class="pmpro_btn pmpro_btn-submit-checkout" value="<?php if($pmpro_requirebilling) { _e('Submit and Check Out', 'paid-memberships-pro'); } else { _e('Submit and Confirm', 'paid-memberships-pro');}?> &raquo;" />
+					<input type="submit" class="pmpro_btn pmpro_btn-submit-checkout" value="<?php if($pmpro_requirebilling) { _e('ثبت و سفارش', 'paid-memberships-pro'); } else { _e('ثبت و تکمیل', 'paid-memberships-pro');}?> &raquo;" />
 				</span>
 				<?php
 				}
@@ -600,7 +600,7 @@
 
 		<span id="pmpro_processing_message" style="visibility: hidden;">
 			<?php
-				$processing_message = apply_filters("pmpro_processing_message", __("Processing...", "paid-memberships-pro"));
+				$processing_message = apply_filters("pmpro_processing_message", __("در حال پردازش...", "paid-memberships-pro"));
 				echo $processing_message;
 			?>
 		</span>

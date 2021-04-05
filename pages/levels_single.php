@@ -54,9 +54,9 @@ if ( $pmpro_msg ) {
 				<p class="pmpro_mmpu_group-type">
 					<?php
 					if ( intval( $pmpro_groups[ $group ]->allow_multiple_selections ) > 0 ) {
-						_e( 'You can choose multiple levels from this group.', 'pmpro-multiple-memberships-per-user' );
+						_e( 'شما می توانید سطوح مختلف را از این گروه انتخاب کنید.', 'pmpro-multiple-memberships-per-user' );
 					} else {
-						_e( 'You can only choose one level from this group.', 'pmpro-multiple-memberships-per-user' );
+						_e( 'شما فقط می توانید یک سطح از این گروه را انتخاب کنید.', 'pmpro-multiple-memberships-per-user' );
 					}
 					?>
 				</p>
@@ -74,7 +74,7 @@ if ( $pmpro_msg ) {
 							<p class="pmpro_level-price">
 								<?php
 								if ( pmpro_isLevelFree( $pmpro_levels[ $level ] ) ) {
-									_e( "Free", "paid-memberships-pro" );
+									_e( "رایگان", "paid-memberships-pro" );
 								} else {
 									echo pmpro_getLevelCost( $pmpro_levels[ $level ], true, true );
 								}
@@ -95,13 +95,13 @@ if ( $pmpro_msg ) {
 							<?php 
 							if( ! pmpro_hasMembershipLevel( $pmpro_levels[ $level ]->id ) ) {
 								?>
-									<a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?>" href="<?php echo pmpro_url("checkout", "?level=" . $pmpro_levels[ $level ]->id, "https")?>"><?php _e('Select', 'paid-memberships-pro' );?></a>
+									<a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?>" href="<?php echo pmpro_url("checkout", "?level=" . $pmpro_levels[ $level ]->id, "https")?>"><?php _e('انتخاب', 'paid-memberships-pro' );?></a>
 								<?php
 							} else {
 								//if it's a one-time-payment level, offer a link to renew				
 								if( pmpro_isLevelExpiringSoon( $pmpro_levels[ $level ] ) ) {
 									?>
-										<a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?>" href="<?php echo pmpro_url("checkout", "?level=" . $pmpro_levels[ $level ]->id, "https")?>"><?php _e('Renew', 'paid-memberships-pro' );?></a>
+										<a class="<?php echo pmpro_get_element_class( 'pmpro_btn pmpro_btn-select', 'pmpro_btn-select' ); ?>" href="<?php echo pmpro_url("checkout", "?level=" . $pmpro_levels[ $level ]->id, "https")?>"><?php _e('تمدید', 'paid-memberships-pro' );?></a>
 									<?php
 								} else {
 									?>
@@ -125,9 +125,9 @@ if ( $pmpro_msg ) {
 <nav id="nav-below" class="navigation" role="navigation">
 	<div class="nav-previous alignleft">
 		<?php if ( ! empty( $current_user->membership_level->id ) ) { ?>
-			<a href="<?php echo pmpro_url( "account" ) ?>"><?php _e( '&larr; Return to Your Account', 'paid-memberships-pro' ); ?></a>
+			<a href="<?php echo pmpro_url( "account" ) ?>"><?php _e( '&larr; بازگشت به حساب کاربری شما', 'paid-memberships-pro' ); ?></a>
 		<?php } else { ?>
-			<a href="<?php echo home_url() ?>"><?php _e( '&larr; Return to Home', 'paid-memberships-pro' ); ?></a>
+			<a href="<?php echo home_url() ?>"><?php _e( '&larr; بازگشت به صفحه اصلی', 'paid-memberships-pro' ); ?></a>
 		<?php } ?>
 	</div>
 </nav>
