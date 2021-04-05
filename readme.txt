@@ -1,3 +1,4 @@
+# Translated to Persian
 === Paid Memberships Pro: Multiple Memberships per User ===
 Contributors: strangerstudios
 Tags: pmpro, paid memberships pro, members, memberships, mmpu
